@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  trading-data-dev:
+    container_name: trading-data-develop
+    image: trading-data-dev:1.0.0
+    build: .
+    ports:
+      - 4002:4002
