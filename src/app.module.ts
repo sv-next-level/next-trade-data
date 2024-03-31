@@ -3,9 +3,11 @@ import { ConfigModule } from "@nestjs/config";
 
 import { AppService } from "@/app.service";
 import { AppController } from "@/app.controller";
-import configuration from "@/config/configuration";
 import { validate } from "@/config/env.validation";
+import configuration from "@/config/configuration";
+import { AngeloneService } from "@/angelone/angelone.service";
 import { DatabaseModule } from "@/infra/mongoose/database.module";
+import { AngeloneController } from "@/angelone/angelone.controller";
 
 @Module({
   imports: [
@@ -18,7 +20,7 @@ import { DatabaseModule } from "@/infra/mongoose/database.module";
     }),
     DatabaseModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, AngeloneController],
+  providers: [AppService, AngeloneService],
 })
 export class AppModule {}

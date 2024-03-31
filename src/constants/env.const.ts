@@ -4,3 +4,8 @@ export enum ENVIRONMENT {
   STAGING = "STAGING",
   PRODUCTION = "PRODUCTION",
 }
+
+export enum API_METHOD {
+  GET = "GET",
+  POST = "POST",
+}
